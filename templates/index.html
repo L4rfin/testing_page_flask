@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Strona Testowa</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      background-color: #f4f4f4;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    .button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .easter-egg {
+      display: none;
+      margin-top: 20px;
+      font-size: 2rem;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .easter-egg:hover {
+      transform: scale(1.2);
+    }
+
+    .hidden-zone {
+      margin-top: 40px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #aaa;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Witaj na stronie testowej 🧪</h1>
+  <p>To jest przykładowy paragraf do testów. Możesz tu dodawać własne komponenty HTML, testować style CSS oraz skrypty JS.</p>
+
+  <button class="button" onclick="alert('Kliknąłeś przycisk!')">Kliknij mnie</button>
+
+  <div class="hidden-zone" onclick="showEasterEggs()">Nie klikaj tutaj 🕵️</div>
+
+  <div id="easter-eggs">
+    <div class="easter-egg">🐰</div>
+    <div class="easter-egg">🥕</div>
+    <div class="easter-egg">🐇</div>
+    <div class="easter-egg">🌷</div>
+    <div class="easter-egg">🐣</div>
+  </div>
+
+  <script>
+    function showEasterEggs() {
+      const eggs = document.querySelectorAll(".easter-egg");
+      eggs.forEach((egg, index) => {
+        setTimeout(() => {
+          egg.style.display = "block";
+        }, index * 300);
+      });
+    }
+  </script>
+
+</body>
+</html>
